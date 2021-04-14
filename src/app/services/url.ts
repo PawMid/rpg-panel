@@ -1,0 +1,1 @@
+export const wfrpBackend: String = "http://localhost:3002/";

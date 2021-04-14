@@ -1,1 +1,149 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+:root{
+    --text: #c5c6c7;
+    --home: #7700FF;
+    --home-sec: #8E2BFF;
+    --WFRP: #B22222;
+    --WFRP-sec: #a83939;
+    --CoC: #556B2F;
+    --border: #acacac;
+}
+
+body, html {
+    height: 100%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Montserrat';
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.3em;
+    display: flex;
+}
+
+.container  a {
+    color: white;
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.page-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container-left{
+    grid-column: 1 / 2;
+}
+
+.container-right{
+    grid-column: 2 / 3;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.input-default{
+    padding: 0.5em;
+}
+
+.button-default{
+    outline: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+.option{
+    padding: 1em;
+    border: none;
+    background-color: unset;
+    color: black;
+    transition: 0.3s;
+    outline: none;
+}
+
+.option:hover{
+    cursor: pointer;
+    color: var(--border);
+}
+
+.required::after{
+    content: "*";
+    color: tomato;
+}
+
+.form-field{
+    width: 50%;
+}
+
+.flex{
+    display: flex;
+}
+
+.column-flex{
+    flex-direction: column;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.spacing-05em div, form div{
+    margin: 0.5em 0;
+}
+
+.spacing-05em div div, form div div{
+    margin: 0;
+}
+
+.form-error{
+    color: tomato;
+}
+
+.pad-tb-0{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.list li{
+    background: rgb(238, 238, 238);
+    padding: 1em;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    display: flex;
+    max-width: 35vw;
+    justify-content: space-between;
+}
+
+.list li div{
+    display: inline-flex;
+    align-items: center;
+}

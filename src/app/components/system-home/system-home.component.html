@@ -1,0 +1,5 @@
+<div class="wrapper">
+
+<p *ngIf="checkHome()">system-home works!</p>
+<router-outlet *ngIf="!checkHome()"></router-outlet>
+</div>

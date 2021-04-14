@@ -1,0 +1,13 @@
+.systemList{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    border: var(--border) solid 2px;
+}
+
+.systemList a{
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    border-radius: 5px;
+    color: white;
+}

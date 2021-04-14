@@ -1,0 +1,51 @@
+
+<div class="page-container">
+    <div class="container-left">
+        <h2>Players</h2>
+        <form [formGroup]="searchForm" (ngSubmit)="searchPlayers()">
+            <strong>Search:</strong>
+            <input type="text" formControlName="searchString" class="input-default">
+            <button type="submit" class="option"><fa-icon [icon]="faSearch"></fa-icon></button>
+        </form>
+        <strong *ngIf="!players">There are no platers in the system.</strong>
+        <ul *ngIf="players" class="players-list">
+            <li *ngFor="let player of players">
+                <div class="info">
+                    <div>
+                        Name: {{player.name}} {{player.lastName}}
+                    </div>
+                    <div class="buttons">
+                        <a [routerLink]="'./'+player._id" class="option"><fa-icon [icon]="faEdit"></fa-icon></a>
+                        <button class="option" (click)="deletePlayer(player._id)"><fa-icon [icon]="delete"></fa-icon></button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container-right">
+        <h2>Add new Player</h2>
+        <form [formGroup]="newPlayerForm" (ngSubmit)="addPlayer()" class="flex flex-wrap column-flex align-center">
+            <div class="form-field">
+                <div class="info">
+                    <strong class="required">Player name:</strong>
+                    <input type="text" formControlName="name" class="input-default">
+                </div>
+                <span *ngIf="playerFormSubmited && newPlayerForm.controls.name.errors && newPlayerForm.controls.name.errors.required">This field is required!</span>
+            </div>
+            <div class="form-field">
+                <div class="info">
+                    <strong class="required">Player last name:</strong>
+                    <input type="text" formControlName="lastName" class="input-default">
+                </div>
+                <span *ngIf="playerFormSubmited && newPlayerForm.controls.lastName.errors && newPlayerForm.controls.lastName.errors.required">This field is required!</span>
+            </div>
+            <div>
+                <span class="required"></span><span> - required fields.</span>
+            </div>
+            <div *ngIf="submitMessage">
+                {{submitMessage}}
+            </div>
+            <button type="submit" class="button-default">Add player</button>
+        </form>
+    </div>
+</div>

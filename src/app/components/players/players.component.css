@@ -1,0 +1,27 @@
+.players-list{
+    list-style-type: none;
+    margin: 0;padding: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.players-list li{
+    background: rgb(238, 238, 238);
+    padding: 1em;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    display: flex;
+    max-width: 35vw;
+}
+
+.players-list li .info div{
+    display: inline-flex;
+    align-items: center;
+}
+
+.info{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+

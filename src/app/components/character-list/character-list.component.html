@@ -1,0 +1,19 @@
+<div *ngIf="!list">{{emptyMessage}}</div>
+<ul *ngIf="list" class="list">
+    <li *ngFor="let item of list">
+        <div *ngIf="item.name">
+            Name: {{item.name}}
+        </div>
+        <div *ngIf="item.race">
+            Race: {{item.race}}
+        </div>
+        <div>
+            <a *ngIf="editLink" class="option" [routerLink]="editLink + '/' + item._id">
+                <fa-icon [icon]="faEdit"></fa-icon>
+            </a>
+            <button class="option" *ngIf="deleteService">
+                <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
+        </div>
+    </li>
+</ul>

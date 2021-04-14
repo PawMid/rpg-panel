@@ -1,0 +1,50 @@
+<div class="page-container">
+    <div class="container-left" *ngIf="playerData">
+        <div *ngIf="!edit">
+            <h2>
+                Player data 
+                <button class="option pad-tb-0" (click)="enableForm()" [ngStyle]="{'font-size': 'inherit'}">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+            </h2>
+            <div class="spacing-05em">
+                <div>
+                    Name: <span>{{playerData.name}}</span>
+                </div>
+                <div>
+                    Last name: <span>{{playerData.lastName}}</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="edit">
+            <h2>Player data</h2>
+            <form [formGroup]="playerForm">
+                <div>
+                    Name: <input type="text" class="input-default" formControlName="name">
+                </div>
+                <div *ngIf="playerForm.controls.name.errors && playerForm.controls.name.errors.required" class="form-error"> 
+                    Name field cannot be empty!
+                </div>
+                <div>
+                    Last name: <input type="text" class="input-default" formControlName="lastName">
+                </div>
+                <div class="form-error" *ngIf="playerForm.controls.lastName.errors && playerForm.controls.lastName.errors.required">
+                    Last name field cannot be empty!
+                </div>
+                <div>
+                    Save:
+                    <button class="option" (click)="handleSave()" [ngStyle]="{'font-size': 'inherit'}">
+                        <fa-icon [icon]="faCheck"></fa-icon>
+                    </button>
+                    <button class="option" (click)="handleCancel()" [ngStyle]="{'font-size': 'inherit'}">
+                        <fa-icon [icon]="faTimes"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container-right">
+        <h2>Characters</h2>
+        <app-character-list [list]="characters" [editLink]="characterLink"></app-character-list>
+    </div>
+</div>

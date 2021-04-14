@@ -1,0 +1,9 @@
+<h1>Home</h1>
+<h3>Avaliable systems:</h3>
+<div *ngIf="systems" class="systemList">
+    <a *ngFor="let system of systems" [style.background]="'var(--' + system.acronym + ')'" [routerLink]="system.acronym" >{{system.name}}</a>
+</div>
+
+<div *ngIf="!systems">
+    There are no systems.
+</div>
