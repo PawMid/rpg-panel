@@ -4,6 +4,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 import {ActivatedRoute} from '@angular/router';
 import {faEdit, faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {wfrpBackend} from '../../services/url';
 
 @Component({
   selector: 'app-player-page',
@@ -21,6 +22,8 @@ export class PlayerPageComponent implements OnInit {
   edit: boolean = false;
   playerForm: FormGroup;
   characterLink: string;
+  deleteType: string = 'character';
+  system: string;
 
   constructor(private playerService: UserServiceService, private systemService: SystemsServiceService, private route: ActivatedRoute, private formBuilder: FormBuilder) { }
 
@@ -33,8 +36,8 @@ export class PlayerPageComponent implements OnInit {
         this.resetForm();
       })
     })
-    this.characterLink = '/' + this.systemService.getCurrentSystem() + '/characters';
-    
+    this.system = this.systemService.getCurrentSystem();
+    this.characterLink = '/' + this.system + '/characters';
   }
 
   toggleEdit(){

@@ -11,7 +11,7 @@
             <a *ngIf="editLink" class="option" [routerLink]="editLink + '/' + item._id">
                 <fa-icon [icon]="faEdit"></fa-icon>
             </a>
-            <button class="option" *ngIf="deleteService">
+            <button class="option" *ngIf="deleteService" (click)="handleDelete(item._id)">
                 <fa-icon [icon]="faTrash"></fa-icon>
             </button>
         </div>
