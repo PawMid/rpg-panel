@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ButtonsService } from 'src/app/services/buttons.service';
 import { SystemsServiceService } from 'src/app/services/systems-service.service';
@@ -13,7 +13,7 @@ export class NavComponent implements OnInit{
   @Input() system: String = '';
   buttons: Array<{text: String, link: String, bg:String}> = []
 
-  constructor(public router: Router, private buttonsService: ButtonsService) {
+  constructor(public router: Router, @Inject(ButtonsService) private buttonsService) {
    }
 
   ngOnInit(): void {
