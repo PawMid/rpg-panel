@@ -36,7 +36,6 @@ export class NavButtonComponent implements OnInit {
 
   mouseEnter(){
     this.mouseIn = true;
-    console.log(this.bgColor)
   }
 
 }

@@ -44,7 +44,7 @@ const commonNavButtons: Array<Button> = [
 const wfrpNavButtons:  Array<Button> = [
   {
     text: "Manage",
-    link: "/WFRP/mange",
+    link: "/WFRP/manage",
     bg: "none",
     children: [
       {
@@ -93,5 +93,13 @@ export class ButtonsService {
       buttons = navButtons;
     }
     return buttons;
+  }
+
+  getButtonChildren(system: string, button: string){
+    if(system == 'WFRP'){
+      return wfrpNavButtons.filter(btn => {
+        return btn.text == button;
+      })[0].children;
+    }
   }
 }

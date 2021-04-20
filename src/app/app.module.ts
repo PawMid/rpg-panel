@@ -16,6 +16,8 @@ import { CharacterFormComponent } from './components/character-form/character-fo
 import { NavButtonComponent } from './components/nav-button/nav-button.component';
 import { NavButtonChildComponent } from './components/nav-button-child/nav-button-child.component';
 import { NavChildDirective } from './directives/nav-child.directive';
+import { ManagePageComponent } from './components/manage-page/manage-page.component';
+import { ButtonComponent } from './components/manage-page/button/button.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { NavChildDirective } from './directives/nav-child.directive';
     CharacterFormComponent,
     NavButtonComponent,
     NavButtonChildComponent,
-    NavChildDirective
+    NavChildDirective,
+    ManagePageComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

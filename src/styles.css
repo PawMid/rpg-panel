@@ -8,6 +8,7 @@
     --WFRP-sec: #a83939;
     --CoC: #556B2F;
     --border: #acacac;
+    --border-hover: #bfbfbf;
 }
 
 body, html {
@@ -21,6 +22,7 @@ body {
 }
 
 a {
+    color: inherit;
     text-decoration: none;
 }
 

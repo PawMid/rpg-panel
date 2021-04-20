@@ -21,7 +21,6 @@ export class NavButtonChildComponent implements OnInit {
 
   @HostBinding("style")
   get hover(){
-    console.log('inside')
     return this.hovered.hover ? 'background: #ababab' : 'background: none';
   }
 
