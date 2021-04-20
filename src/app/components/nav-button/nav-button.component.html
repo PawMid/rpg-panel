@@ -1,0 +1,11 @@
+<a [routerLink]="button.link" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()" [style.background]="mouseIn ? bgColor : 'none'">
+    {{button.text}}
+    <div *ngIf="button.children && mouseIn">
+        <nav-button-child *ngFor="let child of button.children" [button]="child">
+            <a navChild [routerLink]="child.link">
+                <fa-icon [icon]="child.icon" *ngIf="child.icon"></fa-icon>
+                {{child.text}}
+            </a>
+        </nav-button-child>
+    </div>
+  </a>

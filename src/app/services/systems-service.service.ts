@@ -24,6 +24,7 @@ export class SystemsServiceService {
   }
 
   getCurrentSystem(){
-    return this.router.url.split('/')[1];
+    const system = this.router.url.split('/')[1] ? this.router.url.split('/')[1] : 'home';
+    return system;
   }
 }

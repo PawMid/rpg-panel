@@ -5,7 +5,7 @@
         <span *ngIf="system !== ''">-{{system}}</span>
         </div>
         <nav> 
-            <div *ngFor="let button of buttons; let i = index"><a [routerLink]="button.link" (mouseover)="changeBackground(true, i)" (mouseout)="changeBackground(false, i)" [style.background]="button.bg">{{button.text}}</a></div>  
+            <nav-button *ngFor="let button of buttons" [button]="button" [system]="system"></nav-button>
         </nav>
     </div>   
 </header>

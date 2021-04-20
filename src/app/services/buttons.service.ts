@@ -1,13 +1,7 @@
-import { Injectable, InjectionToken } from '@angular/core';
-import { SystemsServiceService } from './systems-service.service';
-import {_} from 'lodash';
-
-interface Button {
-  text: string;
-  link: string;
-  bg: string;
-  children?: Array<Button>;
-}
+import { Injectable } from '@angular/core';
+import { _ } from 'lodash';
+import { Button } from '../interfaces/button';
+import {faBook, faHandSparkles, faUserAstronaut} from '@fortawesome/free-solid-svg-icons'
 
 
 const navButtons: Array<Button> = [
@@ -50,18 +44,27 @@ const commonNavButtons: Array<Button> = [
 const wfrpNavButtons:  Array<Button> = [
   {
     text: "Manage",
-    link: "/mange",
+    link: "/WFRP/mange",
     bg: "none",
     children: [
       {
         text: "Abilities",
-        link: "abilities",
-        bg:'none'
+        link: "/WFRP/manage/abilities",
+        bg:'none',
+        icon: faHandSparkles
+        
       },
       {
         text: "Spells",
-        link: "/WFRP/spells",
-        bg:"none"
+        link: "/WFRP/manage/spells",
+        bg:"none",
+        icon: faBook
+      },
+      {
+        text: "Classes",
+        link: "/WFRP/manage/class",
+        bg:"none",
+        icon: faUserAstronaut
       }
     ]
   }
@@ -74,7 +77,7 @@ export class ButtonsService {
 
   getNavButtons(system: String){
     let buttons = [];
-    if(system){
+    if(system !== 'home'){
       
       for(let i = 0; i < commonNavButtons.length; i++){
         buttons.push({
@@ -86,7 +89,9 @@ export class ButtonsService {
       if(system === 'WFRP'){
         buttons = buttons.concat(wfrpNavButtons)
       }
+    } else {
+      buttons = navButtons;
     }
-    return buttons.concat(navButtons);
+    return buttons;
   }
 }

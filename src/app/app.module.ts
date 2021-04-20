@@ -13,6 +13,9 @@ import { PlayersComponent } from './components/players/players.component';
 import { PlayerPageComponent } from './components/player-page/player-page.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterFormComponent } from './components/character-form/character-form.component';
+import { NavButtonComponent } from './components/nav-button/nav-button.component';
+import { NavButtonChildComponent } from './components/nav-button-child/nav-button-child.component';
+import { NavChildDirective } from './directives/nav-child.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CharacterFormComponent } from './components/character-form/character-fo
     PlayersComponent,
     PlayerPageComponent,
     CharacterListComponent,
-    CharacterFormComponent
+    CharacterFormComponent,
+    NavButtonComponent,
+    NavButtonChildComponent,
+    NavChildDirective
   ],
   imports: [
     BrowserModule,
