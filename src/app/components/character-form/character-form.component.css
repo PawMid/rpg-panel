@@ -1,0 +1,29 @@
+.number-input{
+    padding: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+    -moz-appearance: textfield;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.attrib{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.attrib-form{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.attrib-form form{
+    width: 45%;
+}

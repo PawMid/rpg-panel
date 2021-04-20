@@ -12,6 +12,7 @@ import { SystemHomeComponent } from './components/system-home/system-home.compon
 import { PlayersComponent } from './components/players/players.component';
 import { PlayerPageComponent } from './components/player-page/player-page.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
+import { CharacterFormComponent } from './components/character-form/character-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CharacterListComponent } from './components/character-list/character-li
     SystemHomeComponent,
     PlayersComponent,
     PlayerPageComponent,
-    CharacterListComponent
+    CharacterListComponent,
+    CharacterFormComponent
   ],
   imports: [
     BrowserModule,

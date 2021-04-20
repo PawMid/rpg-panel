@@ -101,11 +101,16 @@ section {
 }
 
 .column-flex{
+    display: flex;
     flex-direction: column;
 }
 
 .align-center{
     align-items: center;
+}
+
+.self-align-center{
+    align-self: center;
 }
 
 .justify-center{

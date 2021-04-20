@@ -1,0 +1,33 @@
+<div class="column-flex">
+    <h2>Add character</h2>
+    <form [formGroup]="characterForm">
+        <div>
+            Name: <input class="input-default" type="text" formControlName="characterName">
+        </div>
+        <div>
+            Race: 
+        </div>
+    </form>
+    <h3>Attributes</h3>
+    <div class="form-error" *ngIf="!primaryValues.valid || !secondaryValues.valid">
+        Accepted attribute values 0-99!
+    </div>
+    <div class="attrib-form">
+        <form [formGroup]="primaryValues">
+        <h4>Primary</h4>
+        <div *ngFor="let control of primaryValues.controls; index as i" class="attrib">
+        <span [class.form-error]="primaryValues.controls[i].errors ? true : false">{{attributeService.getFullAttribName(system, primaryNames[i])}} <small>({{primaryNames[i]}})</small>:</span>
+            <input type="number" [formControl]="primaryValues.controls[i]" class="number-input">
+        </div>
+        </form>
+        <form [formGroup]="secondaryValues">
+            <h4>Secondary</h4>
+            <div *ngFor="let control of secondaryValues.controls; index as i" class="attrib">
+            <span [class.form-error]="secondaryValues.controls[i].errors ? true : false">{{attributeService.getFullAttribName(system, secondaryNames[i])}} <small>({{secondaryNames[i]}})</small>:</span>
+                <input type="number" [formControl]="secondaryValues.controls[i]" class="number-input">
+            </div>
+            </form>
+    </div>
+    <button class="button-default self-align-center" (click)=handleSave()>Save</button>
+</div>
+
