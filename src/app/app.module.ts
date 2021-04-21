@@ -18,6 +18,9 @@ import { NavButtonChildComponent } from './components/nav-button-child/nav-butto
 import { NavChildDirective } from './directives/nav-child.directive';
 import { ManagePageComponent } from './components/manage-page/manage-page.component';
 import { ButtonComponent } from './components/manage-page/button/button.component';
+import { AbilitiesComponent } from './components/manage-page/abilities/abilities.component';
+import { SpellsComponent } from './components/manage-page/spells/spells.component';
+import { ClassesComponent } from './components/manage-page/classes/classes.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { ButtonComponent } from './components/manage-page/button/button.componen
     NavButtonChildComponent,
     NavChildDirective,
     ManagePageComponent,
-    ButtonComponent
+    ButtonComponent,
+    AbilitiesComponent,
+    SpellsComponent,
+    ClassesComponent
   ],
   imports: [
     BrowserModule,

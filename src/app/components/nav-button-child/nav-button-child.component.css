@@ -8,7 +8,7 @@
     flex-wrap: wrap;
 }
 
-:host ::ng-deep a {
+span {
     text-align: center;
 }
 

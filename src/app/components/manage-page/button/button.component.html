@@ -1,1 +1,4 @@
-<p>button works!</p>
+<a [routerLink]="button.link" class="btn" [class.clicked]="clicked" (click)="clickedButton.next(button)">
+    <fa-icon [icon]="button.icon"></fa-icon>
+    {{button.text}}
+</a>

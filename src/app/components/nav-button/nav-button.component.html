@@ -1,5 +1,7 @@
-<a [routerLink]="button.link" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()" [style.background]="mouseIn ? bgColor : 'none'">
-    {{button.text}}
+<div (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()" [style.background]="mouseIn ? bgColor : 'none'">
+    <a [routerLink]="button.link" >
+        {{button.text}}
+    </a>
     <div *ngIf="button.children && mouseIn">
         <nav-button-child *ngFor="let child of button.children" [button]="child">
             <a navChild [routerLink]="child.link">
@@ -8,4 +10,4 @@
             </a>
         </nav-button-child>
     </div>
-  </a>
+</div>

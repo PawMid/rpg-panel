@@ -70,10 +70,21 @@ const wfrpNavButtons:  Array<Button> = [
   }
 ]
 
+let lastClicked: Button = undefined;
+
 @Injectable({
   providedIn: 'root',
 })
 export class ButtonsService {
+
+  getLastClikced(): Button{
+    return lastClicked;
+  }
+
+  setLastClicked(clicked: Button){
+    lastClicked = clicked;
+    console.log(lastClicked);
+  }
 
   getNavButtons(system: String){
     let buttons = [];

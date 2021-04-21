@@ -3,12 +3,3 @@
     width: 100%;
     flex-wrap: wrap;
 }
-
-.nav a{
-    padding: 1em;
-    background-color: var(--border);
-}
-
-.nav a:hover{
-    background-color: var(--border-hover);
-}

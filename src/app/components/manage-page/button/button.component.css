@@ -1,0 +1,8 @@
+.btn{
+    padding: 1em;
+    background-color: var(--border);
+}
+
+.clicked{
+    background-color: var(--border-hover);
+}

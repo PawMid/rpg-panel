@@ -1,9 +1,6 @@
 <h2>Manage:</h2>
 <div class="nav">
-    <a [routerLink]="button.link" *ngFor="let button of buttons">
-        <fa-icon [icon]="button.icon"></fa-icon>
-        {{button.text}}
-    </a>
+    <app-button *ngFor="let button of buttons" [button]="button" [clicked]="url == button.link"></app-button>
 </div>
 
 <router-outlet></router-outlet>
